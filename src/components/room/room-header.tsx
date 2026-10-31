@@ -35,12 +35,12 @@ export function RoomHeader({ connection }: { connection: ConnectionState }) {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-bone/10 bg-void/90 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-bone/10 bg-void/90 pt-[env(safe-area-inset-top,0px)] backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center gap-2 px-4 sm:gap-3 sm:px-6 lg:px-8">
         <Link
           href="/"
           aria-label="Return to the foyer"
-          className="group flex shrink-0 items-center gap-2"
+          className="group flex min-h-11 min-w-11 shrink-0 items-center justify-center gap-2 sm:justify-start"
         >
           <span className="relative grid size-8 place-items-center rounded-full border border-bone/20">
             <span className="size-1.5 rounded-full bg-blood shadow-[0_0_10px_rgba(127,33,29,0.9)] transition group-hover:bg-ember" />
@@ -57,7 +57,7 @@ export function RoomHeader({ connection }: { connection: ConnectionState }) {
           type="button"
           onClick={() => void copyCode()}
           title="Copy wake code"
-          className="inline-flex min-h-9 items-center gap-2 border border-bone/12 bg-black/25 px-2.5 py-1.5 font-label text-[0.7rem] uppercase tracking-[0.24em] text-bone transition hover:border-ember/40 hover:text-ember"
+          className="inline-flex min-h-11 items-center gap-2 border border-bone/12 bg-black/25 px-2.5 py-1.5 font-label text-[0.7rem] uppercase tracking-[0.24em] text-bone transition hover:border-ember/40 hover:text-ember"
         >
           {view.code}
           <Copy className="size-3 text-ash/45" aria-hidden="true" />

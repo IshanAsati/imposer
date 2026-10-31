@@ -5,6 +5,7 @@ export const MEMORY_PACK_IDS = [
   "places",
   "dreams",
   "objects",
+  "brainrot",
 ] as const;
 
 export type MemoryPackId = (typeof MEMORY_PACK_IDS)[number];
@@ -53,6 +54,12 @@ export const PACK_META: readonly PackMeta[] = [
     name: "Things Left Behind",
     category: "Objects",
     description: "Heirlooms, evidence, and ordinary objects with a history.",
+  },
+  {
+    id: "brainrot",
+    name: "The Feed",
+    category: "Internet",
+    description: "Words that escaped the timeline and moved into everyday speech.",
   },
   {
     id: "random",

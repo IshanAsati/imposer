@@ -43,7 +43,7 @@ export function ResumeWake() {
       <div className="flex shrink-0 items-center gap-1">
         <Link
           href={`/room/${session.code}`}
-          className="inline-flex items-center gap-1.5 px-2 py-1 font-label text-[0.56rem] uppercase tracking-[0.16em] text-bone underline decoration-ember/40 underline-offset-4 hover:text-ember"
+          className="inline-flex min-h-11 items-center gap-1.5 px-2 font-label text-[0.56rem] uppercase tracking-[0.16em] text-bone underline decoration-ember/40 underline-offset-4 hover:text-ember"
         >
           Return
           <ArrowRight className="size-3" />
@@ -51,7 +51,7 @@ export function ResumeWake() {
         <button
           type="button"
           aria-label="Forget saved wake"
-          className="grid size-7 place-items-center text-ash/50 hover:text-bone"
+          className="-mr-1 grid size-11 place-items-center text-ash/50 hover:text-bone"
           onClick={() => {
             clearSession();
             notifySessionChanged();

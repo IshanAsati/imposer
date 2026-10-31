@@ -53,7 +53,7 @@ export default function NotFound() {
         </div>
         <Link
           href="/"
-          className="mt-7 inline-flex items-center gap-2 font-label text-[0.52rem] uppercase tracking-[0.16em] text-ash/45 transition hover:text-bone"
+          className="mt-5 inline-flex min-h-11 items-center gap-2 font-label text-[0.52rem] uppercase tracking-[0.16em] text-ash/45 transition hover:text-bone"
         >
           <ArrowLeft className="size-3" />
           Back to the foyer

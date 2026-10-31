@@ -19,7 +19,7 @@ export default function CreatePage() {
       <div className="mx-auto w-full max-w-6xl px-5 pb-20 pt-8 sm:px-8 sm:pt-12">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 font-label text-[0.58rem] uppercase tracking-[0.18em] text-ash/70 transition hover:text-bone"
+          className="inline-flex min-h-11 items-center gap-2 font-label text-[0.58rem] uppercase tracking-[0.18em] text-ash/70 transition hover:text-bone"
         >
           <ArrowLeft className="size-3.5" />
           Back to the foyer

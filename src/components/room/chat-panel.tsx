@@ -173,12 +173,12 @@ export function ChatPanel({ className }: ChatPanelProps) {
             maxLength={240}
             autoComplete="off"
             disabled={isChatPending}
-            className="field min-h-10 py-2 text-base"
+            className="field min-h-11 py-2 text-base"
           />
           <Button
             type="submit"
             size="sm"
-            className="shrink-0 px-3"
+            className="min-h-11 shrink-0 px-3"
             disabled={!body.trim() || isChatPending}
             aria-label="Send whisper"
           >

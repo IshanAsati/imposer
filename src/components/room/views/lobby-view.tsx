@@ -320,7 +320,7 @@ function TimeSelect({
         value={value}
         disabled={disabled}
         onChange={(event) => onChange(Number(event.target.value))}
-        className="field min-h-10 py-1.5 text-base"
+        className="field min-h-11 py-1.5 text-base"
       >
         {options.map((option) => (
           <option key={option} value={option}>

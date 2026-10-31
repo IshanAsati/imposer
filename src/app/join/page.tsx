@@ -17,7 +17,7 @@ export default function JoinPage() {
       <SiteHeader />
       <Link
         href="/"
-        className="mx-auto flex w-full max-w-6xl items-center gap-2 px-5 pt-8 font-label text-[0.58rem] uppercase tracking-[0.18em] text-ash/70 transition hover:text-bone sm:px-8"
+        className="mx-auto flex min-h-11 w-full max-w-6xl items-center gap-2 px-5 pt-6 font-label text-[0.58rem] uppercase tracking-[0.18em] text-ash/70 transition hover:text-bone sm:px-8 sm:pt-8"
       >
         <ArrowLeft className="size-3.5" />
         Back to the foyer

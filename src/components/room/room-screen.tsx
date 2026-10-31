@@ -148,13 +148,21 @@ export function RoomScreen({ code }: RoomScreenProps) {
     : 0;
 
   const openInvite = useCallback(() => setInviteOpen(true), []);
-  const openChat = useCallback(() => setPanel("chat"), []);
+  const openChat = useCallback(() => {
+    setPanel("chat");
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      window.scrollTo(0, 0);
+    }
+  }, []);
   const changePanel = useCallback(
     (next: MobilePanel) => {
       setPanel(next);
       setSeenAt((current) =>
         latestChatAt > current ? latestChatAt : current,
       );
+      if (typeof window !== "undefined" && window.innerWidth < 1024) {
+        window.scrollTo(0, 0);
+      }
     },
     [latestChatAt],
   );
@@ -217,7 +225,7 @@ export function RoomScreen({ code }: RoomScreenProps) {
         <RoomHeader connection={connection} />
         <MobileTabs active={panel} onChange={changePanel} unread={unread} />
 
-        <main className="mx-auto w-full max-w-7xl px-3 pb-16 pt-4 sm:px-5 lg:px-8">
+        <main className="mx-auto w-full max-w-7xl px-3 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] pt-4 sm:px-5 lg:px-8">
           <HostAwayBanner />
 
           <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_21rem] lg:items-start lg:gap-6 xl:grid-cols-[minmax(0,1fr)_23rem]">
@@ -237,7 +245,8 @@ export function RoomScreen({ code }: RoomScreenProps) {
               <div className={cn(panel !== "guests" && "hidden lg:block")}>
                 <Roster
                   className={cn(
-                    panel === "guests" && "h-[calc(100svh-11rem)]",
+                    panel === "guests" &&
+                      "h-[calc(100svh-var(--room-header-offset)-7rem)]",
                     "lg:h-auto lg:max-h-[38vh]",
                   )}
                 />
@@ -246,7 +255,8 @@ export function RoomScreen({ code }: RoomScreenProps) {
               <div className={cn(panel !== "chat" && "hidden lg:block")}>
                 <ChatPanel
                   className={cn(
-                    panel === "chat" && "h-[calc(100svh-11rem)]",
+                    panel === "chat" &&
+                      "h-[calc(100svh-var(--room-header-offset)-7rem)]",
                     "lg:h-[42vh] lg:max-h-[30rem]",
                   )}
                 />
@@ -328,7 +338,7 @@ function EndedScreen({ code }: { code: string }) {
         </div>
         <Link
           href="/"
-          className="mt-6 inline-flex items-center gap-2 font-label text-[0.52rem] uppercase tracking-[0.16em] text-ash/45 transition hover:text-bone"
+          className="mt-4 inline-flex min-h-11 items-center gap-2 font-label text-[0.52rem] uppercase tracking-[0.16em] text-ash/45 transition hover:text-bone"
         >
           <ArrowLeft className="size-3" />
           Back to the foyer

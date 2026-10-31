@@ -56,8 +56,8 @@ export function InviteCard({ code, showQrInitially = false }: InviteCardProps) {
 
   return (
     <section className="relative overflow-hidden border border-ember/25 bg-[radial-gradient(ellipse_at_88%_0%,rgba(208,161,93,0.13),transparent_55%)] p-4 sm:p-5">
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <div>
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
           <p className="font-label text-[0.54rem] uppercase tracking-[0.2em] text-ember/85">
             The invitation
           </p>
@@ -85,16 +85,22 @@ export function InviteCard({ code, showQrInitially = false }: InviteCardProps) {
         ))}
       </button>
 
-      <div className="mt-4 flex flex-wrap items-center gap-2">
+      <div className="mt-4 grid gap-2 sm:flex sm:flex-wrap sm:items-center">
         <Button
           size="sm"
+          className="w-full sm:w-auto"
           onClick={() => void copy(url || absoluteRoomUrl(code), "Invite link copied.")}
         >
           <Copy className="size-3.5" />
           Copy invite link
         </Button>
         {canShare ? (
-          <Button variant="ghost" size="sm" onClick={() => void share()}>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="w-full sm:w-auto"
+            onClick={() => void share()}
+          >
             <Share2 className="size-3.5" />
             Share
           </Button>
@@ -102,6 +108,7 @@ export function InviteCard({ code, showQrInitially = false }: InviteCardProps) {
         <Button
           variant="quiet"
           size="sm"
+          className="w-full sm:w-auto"
           onClick={() => setShowQr((current) => !current)}
           aria-expanded={showQr}
         >

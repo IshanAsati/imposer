@@ -163,7 +163,7 @@ export function Roster({ className }: RosterProps) {
                     onClick={() => setKickTarget(player)}
                     aria-label={`Remove ${player.name} from the wake`}
                     title={`Remove ${player.name}`}
-                    className="grid size-7 place-items-center text-ash/35 transition hover:text-[#d08a7e]"
+                    className="grid size-11 place-items-center text-ash/35 transition hover:text-[#d08a7e] sm:-mr-2"
                   >
                     <X className="size-3.5" />
                   </button>
@@ -182,7 +182,7 @@ export function Roster({ className }: RosterProps) {
           <button
             type="button"
             onClick={openInvite}
-            className="font-label text-[0.52rem] uppercase tracking-[0.14em] text-ember/80 underline decoration-ember/30 underline-offset-4 transition hover:text-ember"
+            className="-my-2 inline-flex min-h-11 items-center px-2 font-label text-[0.52rem] uppercase tracking-[0.14em] text-ember/80 underline decoration-ember/30 underline-offset-4 transition hover:text-ember"
           >
             Invite
           </button>

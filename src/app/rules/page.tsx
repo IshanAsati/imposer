@@ -18,7 +18,7 @@ export default function RulesPage() {
       <div className="mx-auto w-full max-w-4xl px-5 pb-24 pt-8 sm:px-8 sm:pt-12">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 font-label text-[0.58rem] uppercase tracking-[0.18em] text-ash/70 transition hover:text-bone"
+          className="inline-flex min-h-11 items-center gap-2 font-label text-[0.58rem] uppercase tracking-[0.18em] text-ash/70 transition hover:text-bone"
         >
           <ArrowLeft className="size-3.5" />
           Back to the foyer
@@ -67,7 +67,7 @@ export default function RulesPage() {
             </ul>
             <p>
               The default game is five rounds. The host may choose three to ten
-              rounds and one of six memory drawers.
+              rounds and one of seven memory drawers.
             </p>
 
             <h2>2. Receive the memory</h2>
